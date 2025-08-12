@@ -16,6 +16,15 @@ cp .env.example .env       # Create environment file (add ANTHROPIC_API_KEY)
 cd backend && uv run uvicorn app:app --reload --port 8000  # Manual start
 ```
 
+**Code Quality Tools:**
+```bash
+./scripts/format.sh        # Auto-format code with black + ruff --fix
+./scripts/quality.sh       # Check code quality (black --check + ruff check)
+python3 -m black .         # Format code with black (requires black installed)
+python3 -m ruff check .    # Lint code with ruff (requires ruff installed)
+python3 -m ruff check --fix .  # Auto-fix linting issues
+```
+
 **Access Points:**
 - Web Interface: http://localhost:8000
 - API Documentation: http://localhost:8000/docs
