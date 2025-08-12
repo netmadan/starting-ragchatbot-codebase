@@ -50,11 +50,9 @@ class VectorStore:
             path=chroma_path, settings=Settings(anonymized_telemetry=False)
         )
 
-        # Set up sentence transformer embedding function
+        # Use default embedding function (no external dependencies)
         self.embedding_function = (
-            chromadb.utils.embedding_functions.SentenceTransformerEmbeddingFunction(
-                model_name=embedding_model
-            )
+            chromadb.utils.embedding_functions.DefaultEmbeddingFunction()
         )
 
         # Create collections for different types of data
